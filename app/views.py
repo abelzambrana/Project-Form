@@ -19,7 +19,8 @@ def create_producto():
         due_date=data['due_date'],
         sale_price=data['sale_price'],
         cost_price=data['cost_price'],
-        ganancia=data['ganancia'],
+        ganancia= (data['sale_price'] - data['cost_price']),
+        #ganancia=data['ganancia'],
         stock=data['stock'],
         categoria=data['categoria'],
         banner=data['banner']
