@@ -76,6 +76,9 @@ class Producto:
     def save(self):
         db = get_db()
         cursor = db.cursor()
+        self.sale_price = float(self.sale_price)
+        self.cost_price = float(self.cost_price)
+        self.ganancia = self.sale_price - self.cost_price
         if self.id_producto:
             cursor.execute("""
                 UPDATE producto SET nombre = %s, fabricante = %s, codigo_barra = %s, due_date = %s, sale_price = %s,
